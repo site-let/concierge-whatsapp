@@ -908,7 +908,7 @@
     <div class="question-bubble"><span class="q-icon">🚖</span><p>"Como chamo um táxi ou Uber aqui?"</p></div>
     <div class="question-bubble"><span class="q-icon">🧺</span><p>"Tem serviço de lavanderia?"</p></div>
     <div class="question-bubble"><span class="q-icon">🐾</span><p>"Posso trazer pet?"</p></div>
-    <div class="question-bubble"><span class="q-icon">🏖️</span><p>"Qual a praia mais perto daqui?"</p></div>
+    <div class="question-bubble"><span class="q-icon">🚖</span><p>"Como chamo um táxi ou Uber aqui?"</p></div>
     <div class="question-bubble"><span class="q-icon">💊</span><p>"Tem farmácia aberta à noite?"</p></div>
   </div>
 
@@ -991,144 +991,24 @@
   </div>
 </section>
 
-<!-- ROI -->
-<section class="roi-section">
-  <div class="roi-inner">
-    <div class="reveal">
-      <div class="section-label">O retorno</div>
-      <h2 class="section-title">Quanto isso<br>vale para você?</h2>
-      <p style="font-size:0.9rem;line-height:1.7;color:var(--warm-gray);margin-top:16px;">Com uma mensalidade de R$&nbsp;250, o Concierge IA se paga em menos de um turno de trabalho. O que sobra é lucro em tempo, satisfação e avaliações.</p>
-    </div>
-    <div class="roi-numbers reveal">
-      <div class="roi-card">
-        <div class="roi-val">2h+</div>
-        <div class="roi-label">economizadas por dia na recepção</div>
-      </div>
-      <div class="roi-card">
-        <div class="roi-val">24/7</div>
-        <div class="roi-label">disponibilidade sem custo extra</div>
-      </div>
-      <div class="roi-card">
-        <div class="roi-val">3s</div>
-        <div class="roi-label">tempo médio de resposta ao hóspede</div>
-      </div>
-      <div class="roi-card">
-        <div class="roi-val">★ 4.8</div>
-        <div class="roi-label">média das pousadas que implantaram</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section class="pricing-section" id="planos">
-  <div style="text-align:center;">
-    <div class="section-label" style="justify-content:center;">Investimento</div>
-    <h2 class="section-title" style="text-align:center;">Planos simples,<br>sem surpresas.</h2>
-  </div>
-
-  <div class="pricing-grid reveal">
-    <div class="plan">
-      <div class="plan-name">Essencial</div>
-      <div class="plan-price"><sup>R$</sup>150</div>
-      <div class="plan-period">por mês · por estabelecimento</div>
-      <ul class="plan-features">
-        <li>1 número de WhatsApp</li>
-        <li>Até 1 documento PDF</li>
-        <li>500 respostas/mês</li>
-        <li>Relatório mensal</li>
-        <li>Suporte por e-mail</li>
-      </ul>
-      <a href="#" class="plan-cta">Começar agora</a>
-    </div>
-
-    <div class="plan featured">
-      <div class="plan-badge">Mais escolhido</div>
-      <div class="plan-name">Profissional</div>
-      <div class="plan-price"><sup>R$</sup>250</div>
-      <div class="plan-period">por mês · por estabelecimento</div>
-      <ul class="plan-features">
-        <li>1 número de WhatsApp</li>
-        <li>Até 5 documentos PDF</li>
-        <li>Respostas ilimitadas</li>
-        <li>Relatório semanal</li>
-        <li>Personalidade customizada</li>
-        <li>Suporte prioritário via WhatsApp</li>
-      </ul>
-      <a href="#" class="plan-cta">Escolher Profissional</a>
-    </div>
-
-    <div class="plan">
-      <div class="plan-name">Premium</div>
-      <div class="plan-price"><sup>R$</sup>400</div>
-      <div class="plan-period">por mês · por estabelecimento</div>
-      <ul class="plan-features">
-        <li>Múltiplos canais (WA + site)</li>
-        <li>Documentos ilimitados</li>
-        <li>Respostas ilimitadas</li>
-        <li>Painel de analytics</li>
-        <li>Integração com PMS</li>
-        <li>Gerente de conta dedicado</li>
-      </ul>
-      <a href="#" class="plan-cta">Falar com consultor</a>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIAL -->
-<section class="testimonial-section reveal">
-  <div class="stars">★★★★★</div>
-  <blockquote class="testimonial-quote">
-    "A recepcionista agora foca em receber os hóspedes com atenção. O Wi-Fi e o check-out, a IA resolve. Nossas avaliações no TripAdvisor subiram em dois meses."
-  </blockquote>
-  <div class="testimonial-author">
-    — <strong>Marina Costa</strong> · Proprietária, Pousada do Morro · Florianópolis
-  </div>
-</section>
-
-<!-- CTA FINAL -->
-<section class="cta-section">
-  <h2 class="cta-title reveal">
-    Pronto para ter um<br><em>concierge incansável</em>?
-  </h2>
-  <p class="cta-sub reveal">Instalação em 48h. Sem contrato de fidelidade. Cancele quando quiser.</p>
-  <div class="cta-actions reveal">
-    <a href="#" class="btn-primary">
-      <span>🚀</span> Quero testar 14 dias grátis
-    </a>
-  </div>
-</section>
-
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">Concierge IA</div>
-  <p>© 2025 · Feito com ♥ para hoteleiros brasileiros</p>
-  <p>contato@concierge.ia</p>
+  <p>&copy; 2024 Concierge IA. Todos os direitos reservados.</p>
 </footer>
 
 <script>
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
+  // Simple Reveal Animation
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
       }
     });
-  }, { threshold: 0.12 });
-  reveals.forEach(el => observer.observe(el));
+  }, { threshold: 0.1 });
 
-  // Animate chat messages sequentially
-  const msgs = document.querySelectorAll('.msg');
-  msgs.forEach((msg, i) => {
-    msg.style.opacity = '0';
-    msg.style.transform = 'translateY(12px)';
-    msg.style.transition = 'opacity 0.5s, transform 0.5s';
-    setTimeout(() => {
-      msg.style.opacity = '1';
-      msg.style.transform = 'none';
-    }, 1200 + i * 600);
-  });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
+
 </body>
 </html>
