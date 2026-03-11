@@ -62,6 +62,36 @@
     text-transform: uppercase;
   }
 
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .lang-selector {
+    display: flex;
+    gap: 8px;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+  }
+
+  .lang-btn {
+    cursor: pointer;
+    transition: color 0.2s;
+    padding: 4px;
+  }
+
+  .lang-btn.active {
+    color: var(--gold);
+    border-bottom: 1px solid var(--gold);
+  }
+
+  .lang-btn:hover {
+    color: var(--white);
+  }
+
   .nav-cta {
     background: var(--gold);
     color: var(--charcoal);
@@ -814,6 +844,89 @@
     text-transform: uppercase;
   }
 
+  /* ---- WEB CHAT WIDGET ---- */
+  .chat-widget {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+  }
+
+  .chat-bubble {
+    width: 60px;
+    height: 60px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--charcoal);
+    font-size: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+
+  .chat-bubble:hover {
+    transform: scale(1.1);
+  }
+
+  .chat-window {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 320px;
+    height: 450px;
+    background: var(--charcoal-mid);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 16px;
+    overflow: hidden;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.6);
+  }
+
+  .chat-window.active {
+    display: flex;
+    animation: fadeUp 0.3s forwards;
+  }
+
+  .chat-header {
+    background: var(--charcoal);
+    padding: 16px;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .chat-messages {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .chat-input-area {
+    padding: 16px;
+    background: var(--charcoal);
+    border-top: 1px solid rgba(201,168,76,0.1);
+    display: flex;
+    gap: 8px;
+  }
+
+  .chat-input {
+    flex: 1;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: var(--white);
+    font-size: 0.85rem;
+  }
+
   /* ---- ANIMATIONS ---- */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(30px); }
@@ -848,7 +961,14 @@
 <!-- NAV -->
 <nav>
   <div class="nav-logo">Concierge IA</div>
-  <a href="#planos" class="nav-cta">Ver Planos</a>
+  <div class="nav-right">
+    <div class="lang-selector">
+      <span class="lang-btn active" onclick="changeLang('pt')">PT</span>
+      <span class="lang-btn" onclick="changeLang('en')">EN</span>
+      <span class="lang-btn" onclick="changeLang('es')">ES</span>
+    </div>
+    <a href="#planos" class="nav-cta">Ver Planos</a>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -1086,6 +1206,31 @@
   <p>&copy; 2024 Concierge IA. Todos os direitos reservados.</p>
 </footer>
 
+<!-- WEB CHAT WIDGET -->
+<div class="chat-widget">
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+      <div class="wa-avatar">🤖</div>
+      <div class="wa-info">
+        <h4>Assistente Concierge</h4>
+        <span>Online para ajudar</span>
+      </div>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="msg msg-in" style="background: rgba(201,168,76,0.1); color: var(--sand); border: 1px solid rgba(201,168,76,0.2);">
+        Olá! 👋 Como posso ajudar você hoje?
+      </div>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" class="chat-input" placeholder="Digite sua dúvida..." id="chatInput">
+      <div class="wa-send" style="width: 36px; height: 36px; cursor: pointer;">➤</div>
+    </div>
+  </div>
+  <div class="chat-bubble" onclick="toggleChat()">
+    <span>💬</span>
+  </div>
+</div>
+
 <script>
   // Simple Reveal Animation
   const observer = new IntersectionObserver((entries) => {
@@ -1097,6 +1242,23 @@
   }, { threshold: 0.1 });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Chat Widget Toggle
+  function toggleChat() {
+    document.getElementById('chatWindow').classList.toggle('active');
+  }
+
+  // Language Selection Toggle
+  function changeLang(lang) {
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.remove('active');
+      if (btn.innerText.toLowerCase() === lang) {
+        btn.classList.add('active');
+      }
+    });
+    console.log("Idioma alterado para:", lang);
+    // Aqui você pode adicionar lógica para traduzir textos da página se desejar
+  }
 </script>
 
 </body>
